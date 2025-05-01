@@ -28,3 +28,19 @@ To get started:
 - Make sure you are happy with the complete solution and it's done to the best of your ability
 - The app only needs to work on the latest version Chrome
 # wb-front-end-task-tom-wrankmore
+
+# My notes on my approach
+
+I used useEffect and fetch API to ensure the data would be fetched after first render.
+
+I knew I needed to combine all the data into one large array, then return a new array that included a revenue entry with the sum of 'sold' and 'unitPrice'. Then I needed to return another new array that combined any entries with the same name and combine their 'revenue' field. Then rendering the data was simple.
+
+The search was tricky at first because I was initially updating the original data, then got confused about how to use filteredData state if it's initial value was the 'data' state which would be empty before the fetch. I changed filteredData to have an empty array initially and get set at the same time as data. The handleChange function would always start with the full data set and then get populate the filteredData state.
+
+Finally added a useEffect to update the total when filteredData changed.
+
+I needed assistance in some of the array manipulation logic, primarily the combineProducts function and I employed the use of Github copilot to solve that issue, I knew what outcome the logic needed to create but I needed some refresher on how to get there. I sometimes just need to do overall refreshers on array methods that I don't use all the time.
+
+For accessibility I connected the label and input via htmlFor and added some placeholder text for the input. 
+
+I had misread case insensitive as case sensitive, so my code failed the test based on the word 'pear' but I worked that one out by entering the word into the input and then re reading the instruction. I added toLowerCase() in the handleSearch and it became case insensitive and returned the correct total figure of 60,681.02 when value was 'pear'.
