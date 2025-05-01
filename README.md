@@ -44,3 +44,5 @@ I needed assistance in some of the array manipulation logic, primarily the combi
 For accessibility I connected the label and input via htmlFor and added some placeholder text for the input. 
 
 I had misread case insensitive as case sensitive, so my code failed the test based on the word 'pear' but I worked that one out by entering the word into the input and then re reading the instruction. I added toLowerCase() in the handleSearch and it became case insensitive and returned the correct total figure of 60,681.02 when value was 'pear'.
+
+Finally, fetchBranches() is currently handling multiple responsibilities at once, with more time to refine I would separate out the responsibilities into functions and execute them inside a try catch block. I wanted to turn this round quickly.
